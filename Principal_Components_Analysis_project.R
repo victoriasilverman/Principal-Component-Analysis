@@ -130,7 +130,7 @@ comps <- pca.plot$data[,c(1:84)]
 
 # calculate correlation
 pc.cor<-cor(comps[,c(3:44)], comps[,c(1:2,45:84)])
-#plot the correlation but again remove the correlations that are insignificant at pval=0.05
+#plot the correlation
 corrplot(pc.cor,method="square", col=c("maroon2", "springgreen4"),
          bg="white", tl.col = "black", tl.offset=1)
 
