@@ -1,5 +1,6 @@
-## Victoria Silverman, 101039968
-## STAT4601 Assignment 2
+## Victoria Silverman
+##University of Ottawa 
+##This is the property of Victoria Silverman and the University of Ottawa and Carleton University
 
 
 ##import libraries needed
