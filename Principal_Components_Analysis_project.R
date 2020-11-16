@@ -40,7 +40,7 @@ cor.mtest <- function(mat, ...) {
 p.mat <- cor.mtest(my_basket)
 
 ## make a correlation plot and have the entries be blank if the pval>0.05
-corrplot(res, type="upper", order="hclust", col=c("maroon2", "springgreen4"),
+corrplot(res, type="upper", order="hclust", col=c("maroon2", "forestgreen"),
          bg="white", p.mat = p.mat, insig="blank", sig.level = 0.05, tl.col = "black", tl.offset=1)
 
 #preform PCA
@@ -69,7 +69,7 @@ barplot(tenPC, xlab='PC', ylab='Percent Variance',
 # create a plot with the contributions of the features/variables to the first 2 pcs
 fviz_pca_var(basket.pc,
              col.var = "contrib", # Color by contributions to the PC
-             gradient.cols = c("maroon2","springgreen4"),
+             gradient.cols = c("maroon2","forestgreen"),
              repel = TRUE     # Avoid text overlapping
 )
 
@@ -97,7 +97,7 @@ grid.arrange(p1, p2, p3,p4,p5, nrow = 3)
 
 #plot the quality of representation of variables to the first 2 principal components
 fviz_pca_var(basket.pc, col.var = "cos2", 
-             gradient.cols = c("maroon2","springgreen4"),
+             gradient.cols = c("maroon2","forestgreen"),
              repel = TRUE # Avoid text overlapping (slow if many points)
 )
 
@@ -131,9 +131,10 @@ comps <- pca.plot$data[,c(1:84)]
 
 # calculate correlation
 pc.cor<-cor(comps[,c(3:44)], comps[,c(1:2,45:84)])
-#plot the correlation
-corrplot(pc.cor,method="square", col=c("maroon2", "springgreen4"),
+#plot the correlation but again remove the correlations that are insignificant at pval=0.05
+corrplot(pc.cor,method="square", col=brewer.pal(n=6, name="PiYG"),
          bg="white", tl.col = "black", tl.offset=1)
+
 
 
 
